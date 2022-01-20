@@ -6,18 +6,14 @@ using System.Web.Mvc;
 
 namespace MvcProje.Controllers
 {
-    public class AboutController : Controller
+    public class AuthorController : Controller
     {
-        // GET: About
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public PartialViewResult Footer()
+        // GET: Author
+        public PartialViewResult AuthorAbout()
         {
             return PartialView();
         }
-        public PartialViewResult MeetTheTeam()
+        public PartialViewResult AuthorPopularPost()
         {
             return PartialView();
         }

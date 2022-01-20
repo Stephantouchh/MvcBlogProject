@@ -11,13 +11,15 @@ namespace MvcProje.Controllers
     {
         // GET: Blog
         BlogManager blogManager = new BlogManager();
+
         public ActionResult Index()
         {
             return View();
         }
         public PartialViewResult BlogList()
         {
-            return PartialView();
+            var bloglist = blogManager.GetAll();
+            return PartialView(bloglist);
         }
         public PartialViewResult FeaturedPost()
         {
@@ -32,6 +34,18 @@ namespace MvcProje.Controllers
             return PartialView();
         }
         public ActionResult BlogDetails()
+        {
+            return View();
+        }
+        public PartialViewResult BlogCover()
+        {
+            return PartialView();
+        }
+        public PartialViewResult BlogReadAll()
+        {
+            return PartialView();
+        }
+        public ActionResult BlogByCategory()
         {
             return View();
         }
