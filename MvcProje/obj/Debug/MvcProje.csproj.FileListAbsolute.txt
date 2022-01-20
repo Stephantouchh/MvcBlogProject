@@ -77,3 +77,15 @@ C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim U
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\obj\Debug\MvcProje.csproj.CopyComplete
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\obj\Debug\MvcProje.dll
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\obj\Debug\MvcProje.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\BusinessLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\DataAccessLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityFramework.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityFramework.SqlServer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\BusinessLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\DataAccessLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\DataAccessLayer.dll.config
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityLayer.dll.config
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityFramework.xml
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\MvcProje\bin\EntityFramework.SqlServer.xml

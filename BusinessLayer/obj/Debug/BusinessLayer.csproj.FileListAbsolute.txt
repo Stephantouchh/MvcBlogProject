@@ -4,3 +4,12 @@ C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim U
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete

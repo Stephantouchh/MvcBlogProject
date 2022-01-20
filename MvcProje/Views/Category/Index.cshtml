@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Burası Index</h2>
+        <br />
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Kategori Adı</th>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.CategoryID</td>
+                    <td>@x.CategoryName</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
