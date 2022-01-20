@@ -1,0 +1,6 @@
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
