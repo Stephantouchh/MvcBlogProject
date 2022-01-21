@@ -15,6 +15,7 @@ namespace EntityLayer.Concrete
         public string BlogTitle { get; set; }
         [StringLength(100)]
         public string BlogImage { get; set; }
+        public string BlogImageCover { get; set; }
         public DateTime BlogDate { get; set; }
         public string BlogContent { get; set; }
 

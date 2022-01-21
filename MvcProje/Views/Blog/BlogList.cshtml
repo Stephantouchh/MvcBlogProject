@@ -1,4 +1,8 @@
-﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IEnumerable<EntityLayer.Concrete.Blog>
+
 @{
     string color = "";
 }
@@ -32,20 +36,28 @@
                 {
                     color = "post-category text-white bg-success mb-3";
                 }
+                else if (item.Category.CategoryName == "KÜLTÜR & SANAT")
+                {
+                    color = "post-category text-white bg-primary mb-3";
+                }
+                else if (item.Category.CategoryName == "OYUN")
+                {
+                    color = "post-category text-white bg-danger mb-3";
+                }
                 <div class="col-lg-4 mb-4">
                     <div class="entry2">
-                        <a href="single.html"><img src="@item.BlogImage" style="height:250px" alt="Image" class="img-fluid rounded"></a>
+                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.BlogImage" style="height:250px; width:400px;" alt="Image" class="img-fluid rounded"></a>
                         <div class="excerpt">
                             <span class="@color">@item.Category.CategoryName</span>
 
-                            <h2><a href="single.html">@item.BlogTitle</a></h2>
+                            <h2><a href="/Blog/BlogDetails/@item.BlogID">@item.BlogTitle</a></h2>
                             <div class="post-meta align-items-center text-left clearfix">
                                 <figure class="author-figure mb-0 mr-3 float-left"><img src="@item.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
                                 <span class="d-inline-block mt-1"> <a href="#">@item.Author.AuthorName</a></span>
                                 <span>&nbsp;-&nbsp; @(((DateTime)item.BlogDate).ToString("dd MMMM yyyy"))</span>
                             </div>
                             <p>@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>
-                            <p><a href="#">Devamını Oku</a></p>
+                            <p><a href="/Blog/BlogDetails/@item.BlogID">Devamını Oku</a></p>
                         </div>
                     </div>
                 </div>
@@ -53,3 +65,5 @@
         </div>
     </div>
 </div>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-  public  class BlogManager
+    public class BlogManager
     {
         Repository<Blog> repoblog = new Repository<Blog>();
 
         public List<Blog> GetAll()
         {
             return repoblog.List();
+        }
+        public List<Blog> GetBlogByID(int id)
+        {
+            return repoblog.List(x => x.BlogID == id);
         }
     }
 }
