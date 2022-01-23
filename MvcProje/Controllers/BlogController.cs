@@ -159,5 +159,9 @@ namespace MvcProje.Controllers
             ViewBag.CategoryDescription = CategoryDescription;
             return View(BlogListByCategory);
         }
+        public ActionResult AdminBlogList()
+        {
+            return View();
+        }
     }
 }
