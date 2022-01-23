@@ -363,6 +363,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Blog\BlogByCategory.cshtml" />
     <Content Include="Views\MailSubscribe\AddMail.cshtml" />
+    <Content Include="Views\Contact\SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

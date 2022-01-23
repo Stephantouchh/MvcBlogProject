@@ -23,18 +23,16 @@
                 </a>
 
                 <div class="two-col d-block d-md-flex">
-                    <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('/miniblog/images/img_2.jpg');">
-                        <span class="post-category text-white bg-primary">Sports</span>
+                    <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('@ViewBag.postimage2');">
                         <div class="text text-sm">
-                            <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                            <span>February 12, 2019</span>
+                            <h2>@ViewBag.posttitle2</h2>
+                            <span>@(((DateTime)ViewBag.blogdate2).ToString("dd MMMM yyyy"))</span>
                         </div>
                     </a>
-                    <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('/miniblog/images/img_3.jpg');">
-                        <span class="post-category text-white bg-warning">Lifestyle</span>
+                    <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('@ViewBag.postimage3');">
                         <div class="text text-sm">
-                            <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                            <span>February 12, 2019</span>
+                            <h2>@ViewBag.posttitle3</h2>
+                            <span>@(((DateTime)ViewBag.blogdate3).ToString("dd MMMM yyyy"))</span>
                         </div>
                     </a>
                 </div>

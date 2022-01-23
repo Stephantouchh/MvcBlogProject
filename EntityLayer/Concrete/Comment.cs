@@ -17,6 +17,7 @@ namespace EntityLayer.Concrete
         public string Mail { get; set; }
         [StringLength(300)]
         public string CommentText { get; set; }
+        public DateTime CommentDate { get; set; }
 
 
         public int BlogID { get; set; }

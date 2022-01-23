@@ -1,87 +1,29 @@
-﻿
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
 <div class="pt-5">
-    <h3 class="mb-5">6 Comments</h3>
-    <ul class="comment-list">
-        <li class="comment">
-            <div class="vcard">
-                <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-        </li>
-
-        <li class="comment">
-            <div class="vcard">
-                <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-
-            <ul class="children">
+    <h3 class="mb-5">Bu Posta Yapılan Yorumlar</h3>
+    @if (Model.Count() == 0)
+    {
+        <div class="media text-muted">
+            <h5>Henüz bu bloğ'a bir yorum yapılmamış. İlk yorumu yapan siz olun!</h5>
+        </div>
+    }
+    else
+    {
+        <ul class="comment-list">
+            @foreach (var item in Model)
+            {
                 <li class="comment">
                     <div class="vcard">
                         <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
                     </div>
                     <div class="comment-body">
-                        <h3>Jean Doe</h3>
-                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply rounded">Reply</a></p>
+                        <h3>@item.UserName</h3>
+                        <div class="meta">@(((DateTime)item.CommentDate).ToString("dd MMMM yyyy"))</div>
+                        <p>@item.CommentText</p>
                     </div>
-
-
-                    <ul class="children">
-                        <li class="comment">
-                            <div class="vcard">
-                                <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
-                            </div>
-                            <div class="comment-body">
-                                <h3>Jean Doe</h3>
-                                <div class="meta">January 9, 2018 at 2:21pm</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                <p><a href="#" class="reply rounded">Reply</a></p>
-                            </div>
-
-                            <ul class="children">
-                                <li class="comment">
-                                    <div class="vcard">
-                                        <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
-                                    </div>
-                                    <div class="comment-body">
-                                        <h3>Jean Doe</h3>
-                                        <div class="meta">January 9, 2018 at 2:21pm</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                        <p><a href="#" class="reply rounded">Reply</a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </li>
-            </ul>
-        </li>
-
-        <li class="comment">
-            <div class="vcard">
-                <img src="/miniblog/images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-                <h3>Jean Doe</h3>
-                <div class="meta">January 9, 2018 at 2:21pm</div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                <p><a href="#" class="reply rounded">Reply</a></p>
-            </div>
-        </li>
-    </ul>
-    <!-- END comment-list -->
-
+            }
+        </ul>
+    }
     @Html.Action("LeaveComment", "Comment")
 </div>

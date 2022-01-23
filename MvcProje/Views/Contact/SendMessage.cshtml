@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "SendMessage";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('/miniblog/images/img_4.jpg');">
+    <div class="container">
+        <div class="row same-height justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="post-entry text-center">
+                    <h1 class="">Bize Ulaşın!</h1>
+                    <p class="lead mb-4 text-white">Önerileriniz, talepleriniz, yorumlarda yaşadığınız problemler ve diğer bütün durumlar için bir mesaj uzağınızdayız!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 mb-5">
+
+
+
+                <form method="post" class="p-5 bg-white">
+
+
+                    <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="text-black" for="fname">Adınız</label>
+                            <input type="text" name="Name" id="fname" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="text-black" for="lname">Soyadınız</label>
+                            <input type="text" name="SurName" id="lname" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="email">Mail Adresiniz</label>
+                            <input type="email" id="email" name="Mail" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <div class="col-md-12">
+                            <label class="text-black" for="subject">Konu</label>
+                            <input type="text" id="subject" name="Subject" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="text-black" for="message">Mesajınız</label>
+                            <textarea name="Message" id="message" cols="30" rows="7" class="form-control" placeholder="Yazmak istediğiniz mesajı buraya yazabilirsiniz!"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Mesajınızı Gönderin" class="btn btn-primary py-2 px-4 text-white">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="col-md-5">
+
+                <div class="p-4 mb-3 bg-white">
+                    <p class="mb-0 font-weight-bold">Ofisimiz!</p>
+                    <p class="mb-4">Bahçelievler Mahallesi, Ovalıoğlu Apt. No:28 İç Kapı:1-2-3-4-5-6 Korkut/İstanbul</p>
+
+                    <p class="mb-0 font-weight-bold">Telefon Numaramız!</p>
+                    <p class="mb-4"><a href="#">+90 534 245 2154</a></p>
+
+                    <p class="mb-0 font-weight-bold">Mail Adresimiz!</p>
+                    <p class="mb-0"><a href="#">adminedit@gmail.com</a></p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Action("Footer", "About")
