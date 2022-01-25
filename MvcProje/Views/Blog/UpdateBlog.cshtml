@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Blog 
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Blog Güncelleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.HiddenFor(x => x.BlogID)
+    <label>Blog Başlığı</label>
+    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    <br />
+    <label>Blog Kategorisini Giriniz!</label>
+    @Html.DropDownListFor(X => X.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+    <br />
+    <label>Blog Resim Yolunu Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+    <label>Blog Kapak Resim Yolunu Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogImageCover, new { @class = "form-control" })
+    <br />
+    <label>Blog Tarihini Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogDate, new { @class = "form-control" })
+    <br />
+    <label>Blog Yazarını Giriniz!</label>
+    @Html.DropDownListFor(X => X.AuthorID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+    <br />
+    <label>Blog İçeriğini Giriniz!</label>
+    @Html.TextAreaFor(x => x.BlogContent, 20, 3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Bloğu Güncelleyin</button>
+</form>

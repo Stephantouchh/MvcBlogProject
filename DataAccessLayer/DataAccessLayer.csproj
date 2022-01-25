@@ -77,6 +77,14 @@
     <Compile Include="Migrations\202201231342503_mig3.designer.cs">
       <DependentUpon>202201231342503_mig3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201251430475_mig4.cs" />
+    <Compile Include="Migrations\202201251430475_mig4.designer.cs">
+      <DependentUpon>202201251430475_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201251709175_mig5.cs" />
+    <Compile Include="Migrations\202201251709175_mig5.designer.cs">
+      <DependentUpon>202201251709175_mig5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201231342503_mig3.resx">
       <DependentUpon>202201231342503_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251430475_mig4.resx">
+      <DependentUpon>202201251430475_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251709175_mig5.resx">
+      <DependentUpon>202201251709175_mig5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

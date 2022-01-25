@@ -1,4 +1,6 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using PagedList;
 using PagedList.Mvc;
 using System;
@@ -13,6 +15,7 @@ namespace MvcProje.Controllers
     {
         // GET: Blog
         BlogManager blogManager = new BlogManager();
+        CommentManager commentManager = new CommentManager();
 
         public ActionResult Index()
         {
@@ -161,7 +164,67 @@ namespace MvcProje.Controllers
         }
         public ActionResult AdminBlogList()
         {
+            var bloglist = blogManager.GetAll();
+            return View(bloglist);
+        }
+        public void GetCategoryList()
+        {
+            Context c = new Context();
+            List<SelectListItem> values = (from x in c.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.values = values;
+        }
+        public void GetAuthorList()
+        {
+            Context c = new Context();
+            List<SelectListItem> values2 = (from x in c.Authors.ToList()
+                                            select new SelectListItem
+                                            {
+                                                Text = x.AuthorName,
+                                                Value = x.AuthorID.ToString()
+                                            }).ToList();
+            ViewBag.values2 = values2;
+        }
+        [HttpGet]
+        public ActionResult AddNewBlog()
+        {
+            GetCategoryList();
+            GetAuthorList();
             return View();
+        }
+        [HttpPost]
+        public ActionResult AddNewBlog(Blog blog)
+        {
+            blogManager.BlogAddBL(blog);
+            return RedirectToAction("AdminBlogList");
+        }
+        public ActionResult DeleteBlog(int id)
+        {
+            //blogManager.DeleteBlogBL(id);
+            return RedirectToAction("AdminBlogList");
+        }
+        [HttpGet]
+        public ActionResult UpdateBlog(int id)
+        {
+            Blog blog = blogManager.FindBlog(id);
+            GetCategoryList();
+            GetAuthorList();
+            return View(blog);
+        }
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog blog)
+        {
+            blogManager.UpdateBlog(blog);
+            return RedirectToAction("AdminBlogList");
+        }
+        public ActionResult GetCommentByBlog(int id)
+        {
+            var commentlist = commentManager.CommentByBlog(id);
+            return View(commentlist);
         }
     }
 }

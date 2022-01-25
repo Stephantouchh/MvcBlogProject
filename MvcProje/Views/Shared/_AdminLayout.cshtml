@@ -55,7 +55,7 @@
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Blog/AdminBlogList/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Bloglar
@@ -63,20 +63,35 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
+                            <a href="/Author/AuthorList/" class="nav-link">
                                 <i class="nav-icon fas fa-people-arrows"></i>
                                 <p>
                                     Yazarlar
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-comment"></i>
                                 <p>
                                     Yorumlar
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Comment/AdminCommentListTrue/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Yayınlanan Yorumlar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Comment/AdminCommentListFalse/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kaldırılan Yorumlar</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
@@ -159,7 +174,7 @@
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             @RenderBody()
                         </div>
                     </div>

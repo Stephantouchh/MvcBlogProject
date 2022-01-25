@@ -30,5 +30,25 @@ namespace MvcProje.Controllers
             commentManager.CommentAdd(comment);
             return PartialView();
         }
+        public ActionResult AdminCommentListTrue()
+        {
+            var commentlist = commentManager.CommentByStatusTrue();
+            return View(commentlist);
+        }
+        public ActionResult AdminCommentListFalse()
+        {
+            var commentlist = commentManager.CommentByStatusFalse();
+            return View(commentlist);
+        }
+        public ActionResult StatusChangeToFalse(int id)
+        {
+            commentManager.CommentStatusChangeToFalse(id);
+            return RedirectToAction("AdminCommentListTrue");
+        }
+        public ActionResult StatusChangeToTrue(int id)
+        {
+            commentManager.CommentStatusChangeToTrue(id);
+            return RedirectToAction("AdminCommentListFalse");
+        }
     }
 }

@@ -2457,6 +2457,14 @@
     <Content Include="Views\Contact\SendMessage.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Blog\AdminBlogList.cshtml" />
+    <Content Include="Views\Blog\AddNewBlog.cshtml" />
+    <Content Include="Views\Blog\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\GetCommentByBlog.cshtml" />
+    <Content Include="Views\Author\AuthorList.cshtml" />
+    <Content Include="Views\Author\AddAuthor.cshtml" />
+    <Content Include="Views\Author\AuthorEdit.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListTrue.cshtml" />
+    <Content Include="Views\Comment\AdminCommentListFalse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

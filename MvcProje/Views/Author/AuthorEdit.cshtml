@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Author
+@{
+    ViewBag.Title = "AuthorEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yazar Güncelleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.HiddenFor(x => x.AuthorID)
+    <label>Yazar Adı ve Soyadı</label>
+    @Html.TextBoxFor(x => x.AuthorName, new { placeholder = "Örneğin: Ali Yıldız", @class = "form-control" })
+    <br />
+    <label>Yazar Resim Yolu</label>
+    @Html.TextBoxFor(x => x.AuthorImage, new { placeholder = "Örneğin: https://i.hizliresim.com/nVdigl.jpg", @class = "form-control" })
+    <br />
+    <label>Yazar Yetenekleri</label>
+    @Html.TextBoxFor(x => x.AuthorShort, new { placeholder = "Örneğin: Yazılım / Teknoloji / Tasarım / Kodlama", @class = "form-control" })
+    <br />
+    <label>Yazarın Statüsü</label>
+    @Html.TextBoxFor(x => x.AuthorTitle, new { placeholder = "Örneğin: Yazılım Mühendisi", @class = "form-control" })
+    <br />
+    <label>Yazar Mail Adresi</label>
+    @Html.TextBoxFor(x => x.Mail, new { placeholder = "Örneğin: deneme@gmail.com", @class = "form-control" })
+    <br />
+    <label>Yazar Şifresi</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <label>Yazar Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.PhoneNumber, new { placeholder = "Örneğin: (212) (000 00 00)", @class = "form-control" })
+    <br />
+    <label>Yazar Hakkında Kısmı</label>
+    @Html.TextAreaFor(x => x.AuthorAbout, 10, 3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Yazarı Güncelleyin</button>
+</form>
