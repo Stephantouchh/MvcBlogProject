@@ -25,10 +25,10 @@
             <td>@item.BlogTitle</td>
             <td>@item.Category.CategoryName</td>
             <td>@item.BlogDate.ToShortDateString()</td>
-            <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-default" style="color:red">Sil</a></td>
-            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-default" style="color:black">Güncelle</a></td>
-            <td><a href="/Blog/BlogDetails/@item.BlogID" class="btn btn-default" style="color:blue">Detaylar</a></td>
-            <td><a href="/Blog/GetCommentByBlog/@item.BlogID" class="btn btn-default" style="color:green">Yorumlar</a></td>
+            <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-danger">Sil</a></td> @*style="color:red"*@
+            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-success">Güncelle</a></td> @*style="color:black"*@
+            <td><a href="/Blog/BlogDetails/@item.BlogID" class="btn btn-warning">Detaylar</a></td> @*style="color:blue"*@
+            <td><a href="/Blog/GetCommentByBlog/@item.BlogID" class="btn btn-dark">Yorumlar</a></td> @*style="color:green"*@
         </tr>
     }
 </table>

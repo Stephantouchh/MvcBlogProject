@@ -167,6 +167,11 @@ namespace MvcProje.Controllers
             var bloglist = blogManager.GetAll();
             return View(bloglist);
         }
+        public ActionResult AdminBlogList2()
+        {
+            var bloglist = blogManager.GetAll();
+            return View(bloglist);
+        }
         public void GetCategoryList()
         {
             Context c = new Context();

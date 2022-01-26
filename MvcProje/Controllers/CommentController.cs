@@ -14,7 +14,7 @@ namespace MvcProje.Controllers
         // GET: Comment
         public PartialViewResult CommentList(int id)
         {
-            var commentlist = commentManager.CommentByBlog(id);
+            var commentlist = commentManager.CommentByBlog(id).Where(x=>x.CommentStatus==true);
             return PartialView(commentlist);
         }
         [HttpGet]

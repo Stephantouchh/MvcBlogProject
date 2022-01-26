@@ -27,5 +27,10 @@ namespace MvcProje.Controllers
             contactManager.BLContactAdd(contact);
             return View();
         }
+        public ActionResult SendBox()
+        {
+            var messagelist = contactManager.GetAll();
+            return View(messagelist);
+        }
     }
 }
