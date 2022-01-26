@@ -32,5 +32,14 @@ namespace MvcProje.Controllers
             var messagelist = contactManager.GetAll();
             return View(messagelist);
         }
+        public ActionResult MessageDetails(int id)
+        {
+            Contact contact = contactManager.GetContactDetails(id);
+            return View(contact);
+        }
+        public PartialViewResult GetMessageSideBar()
+        {
+            return PartialView();
+        }
     }
 }
