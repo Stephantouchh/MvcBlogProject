@@ -145,7 +145,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MailSubscribeController.cs" />
-    <Compile Include="Controllers\UserBlogController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2097,6 +2096,13 @@
     <Content Include="miniblog\js\popper.min.js" />
     <Content Include="miniblog\js\slick.min.js" />
     <Content Include="miniblog\single.html" />
+    <Content Include="Report-Login-Free\css\font-awesome.min.css" />
+    <Content Include="Report-Login-Free\css\style.css" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.svg" />
+    <Content Include="Report-Login-Free\images\1.png" />
+    <Content Include="Report-Login-Free\images\undraw_Work_time_re_hdyv.svg" />
+    <Content Include="Report-Login-Free\index.html" />
+    <Content Include="Report-Login-Free\starter-license-W3Layouts.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="miniblog\.DS_Store" />
@@ -2520,6 +2526,11 @@
     <Content Include="authorlogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="authorlogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="authorlogin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.eot" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff" />
+    <Content Include="Report-Login-Free\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Report-Login-Free\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2672,11 +2683,13 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Login\AuthorLogin.cshtml" />
     <Content Include="Views\User\Partial1.cshtml" />
+    <Content Include="Views\User\BlogList.cshtml" />
+    <Content Include="Views\User\UpdateBlog.cshtml" />
+    <Content Include="Views\User\AddNewBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AuthorLogin\" />
-    <Folder Include="Views\UserBlog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

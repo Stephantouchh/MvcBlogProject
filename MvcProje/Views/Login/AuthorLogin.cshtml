@@ -4,108 +4,52 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
-    <title>Perspective Blog</title>
-    <meta charset="UTF-8">
+    <title>Perpective Blog :: Nihat Ovalıoğlu</title>
+    <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="~/authorlogin/images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/css/util.css">
-    <link rel="stylesheet" type="text/css" href="~/authorlogin/css/main.css">
-    <!--===============================================================================================-->
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Report Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/Report-Login-Free/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="~/Report-Login-Free/css/font-awesome.min.css" type="text/css" media="all">
 </head>
 <body>
-
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100 p-t-85 p-b-20">
-                @using (Html.BeginForm("AuthorLogin", "Login", FormMethod.Post))
-                {
-                    <span class="login100-form-title p-b-70">
-                        Hoş Geldiniz!
-                    </span>
-                    <span class="login100-form-avatar">
-                        <img src="~/authorlogin/images/avatar-01.jpg" alt="AVATAR">
-                    </span>
-
-                    <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Kullanıcı Aı Boş Bırakılamaz!">
-                        <input class="input100" type="text" name="Mail">
-                        <span class="focus-input100" data-placeholder="Kullanıcı Adınız!"></span>
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1>Hoş Geldiniz!</h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="content-wthree">
+                        <h2>Giriş Yapın</h2>
+                        @using (Html.BeginForm("AuthorLogin", "Login", FormMethod.Post))
+                        {
+                            <input type="text" class="text" data-validate="Kullanıcı Aı Boş Bırakılamaz!" name="Mail" placeholder="Kullanıcı Adınız!" required="" autofocus>
+                            <input type="password" class="password" name="Password" data-validate="Şifre Boş Bırakılamaz!" placeholder="Şifreniz!" required="" autofocus>
+                            <button class="btn" type="submit">Giriş Yap!</button>
+                        }
+                        <p class="account">Bir Hesabınız Yokmu? <a href="#signup">Kayıt Olun!</a></p>
                     </div>
-
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Şifre Boş Bırakılamaz!">
-                        <input class="input100" type="password" name="Password">
-                        <span class="focus-input100" data-placeholder="Şifreniz!"></span>
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            <img src="~/Report-Login-Free/images/1.png" alt="" class="img-fluid">
+                        </div>
                     </div>
-
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            GİRİŞ Yap
-                        </button>
-                    </div>
-
-                    <ul class="login-more p-t-190">
-                        <li class="m-b-8">
-                            <a href="#" class="txt2">
-                                Kullanıcı Adınızı mı / Şifrenizi mi
-                            </a>
-                            <span class="txt1">
-                                Unuttunuz?
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="txt1">
-                                Bir Hesabınız Yokmu?
-                            </span>
-
-                            <a href="#" class="txt2">
-                                Kayıt Olun!
-                            </a>
-                        </li>
-                    </ul>
-                }
+                </div>
             </div>
+            <!-- //form -->
         </div>
-    </div>
-
-
-    <div id="dropDownSelect1"></div>
-
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/bootstrap/js/popper.js"></script>
-    <script src="~/authorlogin/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/daterangepicker/moment.min.js"></script>
-    <script src="~/authorlogin/vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="~/authorlogin/js/main.js"></script>
-
+        <!-- copyright-->
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
 </body>
 </html>

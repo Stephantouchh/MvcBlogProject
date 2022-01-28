@@ -33,5 +33,11 @@ namespace MvcProje.Controllers
                 return RedirectToAction("AuthorLogin", "Login");
             }
         }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("AuthorLogin");
+        }
     }
 }

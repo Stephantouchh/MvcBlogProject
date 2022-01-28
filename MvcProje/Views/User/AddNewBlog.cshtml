@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewBag.Title = "AddNewBlog";
+    Layout = "~/Views/Shared/_AuthorLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Blog Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <label>Blog Başlığını Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogTitle, new { placeholder = "Örneğin: Merhaba Dünya: Kodlamada İlk Adım", @class = "form-control" })
+    <br />
+    <label>Blog Kategorisini Giriniz!</label>
+    @Html.DropDownListFor(X => X.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+    <br />
+    <label>Blog Resim Yolunu Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { placeholder = "Örneğin: https://i.hizliresim.com/hdwurnb.jpg", @class = "form-control" })
+    <br />
+    <label>Blog Kapak Resim Yolunu Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogImageCover, new { placeholder = "Örneğin: https://i.hizliresim.com/hdwurnb.jpg", @class = "form-control" })
+    <br />
+    <label>Blog Tarihini Giriniz!</label>
+    @Html.TextBoxFor(x => x.BlogDate, new { placeholder = "Örneğin: 01.01.2022", @class = "form-control" })
+    <br />
+    <label>Blog Yazarını Giriniz!</label>
+    @Html.DropDownListFor(X => X.AuthorID, (List<SelectListItem>)ViewBag.values2, new { @class = "form-control" })
+    <br />
+    <label>Blog İçeriğini Giriniz!</label>
+    @Html.TextAreaFor(x => x.BlogContent, 20, 3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">Bloğu Ekleyin</button>
+</form>

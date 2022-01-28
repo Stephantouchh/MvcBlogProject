@@ -1,78 +1,77 @@
 ﻿@model IEnumerable<EntityLayer.Concrete.Author>
 
-<div class="tab-pane" id="settings">
-    @foreach (var item in Model)
+<div class="tab" id="settings">
+    @using (Html.BeginForm("UpdateUserProfile", "User", FormMethod.Post))
     {
-        <form class="form-horizontal">
-            <div class="form-group row">
-                <label for="inputName" class="col-sm-2 col-form-label">Adınız ve Soyadınız:</label>
+        foreach (var item in Model)
+        {
+            <form class="form-horizontal">
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName" value="@item.AuthorName">
+                    <input type="hidden" class="form-control" name="AuthorID" value="@item.AuthorID">
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputEmail" class="col-sm-2 col-form-label">Mail Adresiniz:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" value="@item.Mail">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputName2" class="col-sm-2 col-form-label">Mesleğiniz:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName2" value="@item.AuthorTitle">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputSkills" class="col-sm-2 col-form-label">Yetenekleriniz:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills" value="@item.AuthorShort">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputSkills" class="col-sm-2 col-form-label">Telefon Numaranız:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills" value="@item.PhoneNumber">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputSkills" class="col-sm-2 col-form-label">Resim Url'niz:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills" value="@item.AuthorImage">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputSkills" class="col-sm-2 col-form-label">Şifreniz:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills" value="@item.Password">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputSkills" class="col-sm-2 col-form-label">Şifre Tekrar:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputExperience" class="col-sm-2 col-form-label">Hakkınızda:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputSkills" value="@item.AuthorAbout">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Şifremi değiştirmek istiyorum
-                        </label>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Adınız ve Soyadınız:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="AuthorName" id="inputName" value="@item.AuthorName">
                     </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10">
-                    <button type="submit" class="btn btn-danger">Güncelleyin</button>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Mail Adresiniz:</label>
+                    <div class="col-sm-10">
+                        <input type="email" id="inputEmail" class="form-control" name="Mail" value="@item.Mail">
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group row">
+                    <label for="inputName2" class="col-sm-2 col-form-label">Mesleğiniz:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="AuthorTitle" id="inputName2" value="@item.AuthorTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSkills1" class="col-sm-2 col-form-label">Yetenekleriniz:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="AuthorShort" id="inputSkills1" value="@item.AuthorShort">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSkills2" class="col-sm-2 col-form-label">Telefon Numaranız:</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" name="PhoneNumber" id="inputSkills2" value="@item.PhoneNumber">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSkills3" class="col-sm-2 col-form-label">Resim Url'niz:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="AuthorImage" id="inputSkills3" value="@item.AuthorImage">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSkills4" class="col-sm-2 col-form-label">Şifreniz:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Password" id="inputSkills4" value="@item.Password">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputExperience" class="col-sm-2 col-form-label">Hakkınızda:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="AuthorAbout" id="inputExperience" value="@item.AuthorAbout">
+                    </div>
+                </div>
+                @*<div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Şifremi değiştirmek istiyorum
+                            </label>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                        <button type="submit" class="btn btn-danger">Güncelleyin</button>
+                    </div>
+                </div>
+            </form>
+        }
     }
 </div>
