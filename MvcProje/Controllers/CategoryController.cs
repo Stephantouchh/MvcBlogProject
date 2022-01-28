@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,51 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
         {
-            var categoryvalues = categoryManager.GetAll();
+            var categoryvalues = categoryManager.GetAll().Where(x => x.CategoryStatus == true);
             return PartialView(categoryvalues);
         }
         public ActionResult AdminCategoryList()
         {
             var categorylist = categoryManager.GetAll();
             return View(categorylist);
+        }
+        [HttpGet]
+        public ActionResult AdminCategoryAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminCategoryAdd(Category category)
+        {
+            categoryManager.CategoryAddBL(category);
+            return RedirectToAction("AdminCategoryList");
+        }
+        [HttpGet]
+        public ActionResult CategoryEdit(int id)
+        {
+            Category category = categoryManager.FindCategory(id);
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult CategoryEdit(Category category)
+        {
+            categoryManager.EditCategory(category);
+            return RedirectToAction("AdminCategoryList");
+        }
+        public ActionResult CategoryDelete(int id)
+        {
+            var result = categoryManager.GetByID(id);
+
+            if (result.CategoryStatus == true)
+            {
+                result.CategoryStatus = false;
+            }
+            else
+            {
+                result.CategoryStatus = true;
+            }
+            categoryManager.DeleteCategoryBL(id);
+            return RedirectToAction("AdminCategoryList");
         }
     }
 }

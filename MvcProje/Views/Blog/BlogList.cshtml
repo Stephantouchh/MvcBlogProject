@@ -59,6 +59,7 @@
                                 <figure class="author-figure mb-0 mr-3 float-left"><img src="@item.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
                                 <span class="d-inline-block mt-1"> <a href="#">@item.Author.AuthorName</a></span>
                                 <span>&nbsp;-&nbsp; @(((DateTime)item.BlogDate).ToString("dd MMMM yyyy"))</span>
+                               Puan: @item.BlogRating
                             </div>
                             <p>@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>
                             <p><a href="/Blog/BlogDetails/@item.BlogID">Devamını Oku</a></p>

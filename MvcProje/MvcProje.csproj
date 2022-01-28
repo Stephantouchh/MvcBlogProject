@@ -153,6 +153,7 @@
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Class2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
@@ -2101,6 +2102,7 @@
     <Content Include="miniblog\fonts\icomoon\style.css" />
     <Content Include="miniblog\images\cebupacific-booking.jpg" />
     <Content Include="miniblog\images\hero_1.jpg" />
+    <Content Include="miniblog\images\images.png" />
     <Content Include="miniblog\images\img_1.jpg" />
     <Content Include="miniblog\images\img_2.jpg" />
     <Content Include="miniblog\images\img_3.jpg" />
@@ -2802,6 +2804,7 @@
     <Content Include="Views\Error\Page404.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Blog\AuthorBlogList.cshtml" />
+    <Content Include="Views\Category\CategoryEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

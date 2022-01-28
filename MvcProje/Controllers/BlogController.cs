@@ -212,6 +212,7 @@ namespace MvcProje.Controllers
                                             }).ToList();
             ViewBag.values2 = values2;
         }
+        [Authorize(Roles = "A")]
         [HttpGet]
         public ActionResult AddNewBlog()
         {
@@ -240,7 +241,7 @@ namespace MvcProje.Controllers
 
             blogManager.DeleteBlog(result);
             //blogManager.DeleteBlogBL(id);
-            return RedirectToAction("AdminBlogList","Blog");
+            return RedirectToAction("AdminBlogList", "Blog");
         }
         [HttpGet]
         public ActionResult UpdateBlog(int id)

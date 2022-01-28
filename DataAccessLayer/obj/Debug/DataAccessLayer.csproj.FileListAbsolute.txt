@@ -24,3 +24,5 @@ C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim U
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig7.resources
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig8.resources
 C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig9.resources
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig10.resources
+C:\Users\by\source\repos\Kurumsal Mimaride Mvc5 ile Blog Projesi Geliştirelim Udemy\MvcBlogProject\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.mig11.resources

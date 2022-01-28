@@ -10,9 +10,9 @@
             <input type="email" class="form-control" name="Mail">
         </div>
         @*<div class="form-group">
-            <label for="website">Website</label>
-            <input type="url" class="form-control" id="website">
-        </div>*@
+                <label for="website">Website</label>
+                <input type="url" class="form-control" id="website">
+            </div>*@
         @*<input type="hidden" value="@DateTime.Now.ToShortDateString()" name="CommentDate" />*@
         <input type="hidden" value="@ViewBag.id" name="BlogID" />
         <div class="form-group">
@@ -20,8 +20,21 @@
             <textarea name="CommentText" cols="30" rows="10" class="form-control"></textarea>
         </div>
         <div class="form-group">
+            <label for="select">Puanınız *</label>
+            <br />
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 1)1</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 2)2</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 3)3</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 4)4</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 5)5</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 6)6</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 7)7</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 8)8</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 9)9</label>
+            <label style="margin-right:40px">@Html.RadioButton("BlogRating", 10)10</label>
+        </div>
+        <div class="form-group">
             <input type="submit" value="Yorumunuzu Gönderin!" class="btn btn-primary">
         </div>
-
     </form>
 </div>
