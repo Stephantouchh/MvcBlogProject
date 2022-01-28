@@ -13,16 +13,19 @@ namespace MvcProje.Controllers
         // GET: About
         AboutManager aboutManager = new AboutManager();
         AuthorManager authorManager = new AuthorManager();
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var aboutcontent = aboutManager.GetAll();
             return View(aboutcontent);
         }
+        [AllowAnonymous]
         public PartialViewResult Footer()
         {
             var aboutcontentlist = aboutManager.GetAll();
             return PartialView(aboutcontentlist);
         }
+        [AllowAnonymous]
         public PartialViewResult MeetTheTeam()
         {
             var authorlist = authorManager.GetAll();

@@ -42,15 +42,23 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/ch52nhk.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="@ViewBag.image" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Nihat Ovalıoğlu</a>
+                        <a href="#" class="d-block">@ViewBag.adsoyad</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/User/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-address-card"></i>
+                                <p>
+                                    Profilimi Düzenle
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="/User/BlogList/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -64,14 +72,6 @@
                                 <i class="nav-icon fas fa-blog"></i>
                                 <p>
                                     Blog Hızlı Bakış
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/User/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-address-card"></i>
-                                <p>
-                            Profilimi Düzenle
                                 </p>
                             </a>
                         </li>

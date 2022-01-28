@@ -30,6 +30,11 @@ namespace DataAccessLayer.Concrete
             return _object.FirstOrDefault(where);
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
+        }
+
         public T GetByID(int id)
         {
             return _object.Find(id);

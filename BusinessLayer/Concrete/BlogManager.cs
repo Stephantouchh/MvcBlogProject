@@ -20,6 +20,10 @@ namespace BusinessLayer.Concrete
         {
             return repoblog.List(x => x.BlogID == id);
         }
+        public Blog GetByID(int id)
+        {
+            return repoblog.Get(x => x.BlogID == id);
+        }
         public List<Blog> GetBlogByAuthor(int id)
         {
             return repoblog.List(x => x.AuthorID == id);
@@ -56,6 +60,10 @@ namespace BusinessLayer.Concrete
             blog.CategoryID = p.CategoryID;
             blog.AuthorID = p.AuthorID;
             return repoblog.Update(blog);
+        }
+        public void DeleteBlog(Blog blog)
+        {
+            repoblog.Update(blog);
         }
     }
 }

@@ -13,11 +13,13 @@ namespace MvcProje.Controllers
         // GET: MailSubscribe
         SubscribeMailManager subscribemailManager = new SubscribeMailManager();
         [HttpGet]
+        [AllowAnonymous]
         public PartialViewResult AddMail()
         {
             return PartialView();
         }
         [HttpPost]
+        [AllowAnonymous]
         public PartialViewResult AddMail(SubscribeMail subscribemail)
         {
             subscribemailManager.BLAdd(subscribemail);

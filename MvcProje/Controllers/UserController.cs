@@ -18,6 +18,11 @@ namespace MvcProje.Controllers
         // GET: User
         public ActionResult Index()
         {
+            var mail = (string)Session["Mail"];
+            var adsoyad = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorName).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var image = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorImage).FirstOrDefault();
+            ViewBag.image = image;
             return View();
         }
         public PartialViewResult Partial1(string p)
@@ -33,6 +38,11 @@ namespace MvcProje.Controllers
         }
         public ActionResult BlogList(string p)
         {
+            var mail = (string)Session["Mail"];
+            var adsoyad = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorName).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var image = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorImage).FirstOrDefault();
+            ViewBag.image = image;
             p = (string)Session["Mail"];
             int id = _context.Authors.Where(x => x.Mail == p).Select(y => y.AuthorID).FirstOrDefault();
             var blogs = userprofileManager.GetBlogByAuthor(id);
@@ -63,6 +73,11 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult UpdateBlog(int id)
         {
+            var mail = (string)Session["Mail"];
+            var adsoyad = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorName).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var image = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorImage).FirstOrDefault();
+            ViewBag.image = image;
             Blog blog = blogManager.FindBlog(id);
             GetCategoryList();
             GetAuthorList();
@@ -77,6 +92,11 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult AddNewBlog()
         {
+            var mail = (string)Session["Mail"];
+            var adsoyad = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorName).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var image = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorImage).FirstOrDefault();
+            ViewBag.image = image;
             GetCategoryList();
             GetAuthorList();
             return View();

@@ -12,21 +12,25 @@ namespace MvcProje.Controllers
     {
         CommentManager commentManager = new CommentManager();
         // GET: Comment
+        [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
             var commentlist = commentManager.CommentByBlog(id).Where(x=>x.CommentStatus==true);
             return PartialView(commentlist);
         }
+        [AllowAnonymous]
         [HttpGet]
         public PartialViewResult LeaveComment(int id)
         {
             ViewBag.id = id;
             return PartialView();
         }
+        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult LeaveComment(Comment comment)
         {
             comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            comment.CommentStatus = true;
             commentManager.CommentAdd(comment);
             return PartialView();
         }
