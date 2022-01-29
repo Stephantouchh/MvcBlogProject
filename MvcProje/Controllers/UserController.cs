@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace MvcProje.Controllers
     public class UserController : Controller
     {
         UserProfileManager userprofileManager = new UserProfileManager();
-        BlogManager blogManager = new BlogManager();
+        BlogManager blogManager = new BlogManager(new EfBlogDal());
         Context _context = new Context();
         // GET: User
         public ActionResult Index()
@@ -78,7 +79,7 @@ namespace MvcProje.Controllers
             ViewBag.adsoyad = adsoyad;
             var image = _context.Authors.Where(x => x.Mail == mail).Select(y => y.AuthorImage).FirstOrDefault();
             ViewBag.image = image;
-            Blog blog = blogManager.FindBlog(id);
+            Blog blog = blogManager.GetByID(id);
             GetCategoryList();
             GetAuthorList();
             return View(blog);
@@ -86,7 +87,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult UpdateBlog(Blog blog)
         {
-            blogManager.UpdateBlog(blog);
+            blogManager.BlogUpdate(blog);
             return RedirectToAction("BlogList");
         }
         [HttpGet]

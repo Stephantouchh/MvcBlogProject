@@ -61,6 +61,9 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAuthorDal.cs" />
+    <Compile Include="EntityFramework\EfBlogDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Migrations\202201211514226_mig1.cs" />
     <Compile Include="Migrations\202201211514226_mig1.designer.cs">

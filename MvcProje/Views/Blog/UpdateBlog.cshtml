@@ -10,15 +10,18 @@
     @Html.HiddenFor(x => x.BlogID)
     <label>Blog Başlığı</label>
     @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })
     <br />
     <label>Blog Kategorisini Giriniz!</label>
     @Html.DropDownListFor(X => X.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
     <br />
     <label>Blog Resim Yolunu Giriniz!</label>
     @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-success" })
     <br />
     <label>Blog Kapak Resim Yolunu Giriniz!</label>
     @Html.TextBoxFor(x => x.BlogImageCover, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogImageCover, "", new { @class = "text-success" })
     <br />
     <label>Blog Tarihini Giriniz!</label>
     @Html.TextBoxFor(x => x.BlogDate, new { @class = "form-control" })
@@ -28,6 +31,7 @@
     <br />
     <label>Blog İçeriğini Giriniz!</label>
     @Html.TextAreaFor(x => x.BlogContent, 20, 3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-success" })
     <br />
     <button class="btn btn-outline-info">Bloğu Güncelleyin</button>
 </form>

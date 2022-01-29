@@ -5,6 +5,16 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{
+    string color = "";
+    string casename = "";
+    string checkStatus = "";
+    string blogstatus = "";
+    string buttonStatusColor = "";
+    string statusColor = "";
+    string categoryname = "";
+}
+
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
@@ -49,6 +59,37 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
+                             switch (item.BlogStatus)
+                            {
+                                case true:
+                                    statusColor = "badge rounded-pill bg-success";
+                                    buttonStatusColor = "btn btn-danger";
+                                    break;
+                                case false:
+                                    statusColor = "badge rounded-pill bg-danger";
+                                    buttonStatusColor = "btn btn-success";
+                                    break;
+                            }
+
+                            if (item.BlogStatus == false)
+                            {
+                                color = "post-category text-while bg-danger mb3";
+                                checkStatus = "Aktif Yap";
+                            }
+                            else
+                            {
+                                color = "post-category text-while bg-success mb3";
+                                checkStatus = "Pasif Yap";
+                            }
+
+                            if (@item.BlogStatus)
+                            {
+                                categoryname = "Aktif";
+                            }
+                            else
+                            {
+                                categoryname = "Pasif";
+                            }
                             <tr>
                                 <td>@item.BlogID</td>
                                 <td>@item.BlogTitle</td>
@@ -82,10 +123,10 @@
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/Blog/DeleteBlog/@item.BlogID">
+                                    <a class="@buttonStatusColor btn-sm" href="/Blog/DeleteBlog/@item.BlogID">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Sil
+                                        @checkStatus
                                     </a>
                                 </td>
                             </tr>
@@ -94,7 +135,7 @@
                 </table>
             </div>
             <!-- /.card-body -->
-        </div> 
+        </div>
         <a href="/Blog/AddNewBlog/" class="btn btn-outline-primary">Yeni Blog Ekle</a>
         <!-- /.card -->
     </section>

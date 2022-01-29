@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace MvcProje.Controllers
     public class AboutController : Controller
     {
         // GET: About
-        AboutManager aboutManager = new AboutManager();
-        AuthorManager authorManager = new AuthorManager();
+        AboutManager aboutManager = new AboutManager(new EfAboutDal());
+        AuthorManager authorManager = new AuthorManager(new EfAuthorDal());
         [AllowAnonymous]
         public ActionResult Index()
         {
@@ -28,7 +29,7 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult MeetTheTeam()
         {
-            var authorlist = authorManager.GetAll();
+            var authorlist = authorManager.GetList().Take(6);
             return PartialView(authorlist);
         }
         [HttpGet]

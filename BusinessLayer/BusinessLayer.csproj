@@ -60,6 +60,8 @@
     <Compile Include="Concrete\SubscribeMailManager.cs" />
     <Compile Include="Concrete\UserProfileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationRules\AboutValidator.cs" />
+    <Compile Include="ValidationRules\AuthorValidator.cs" />
     <Compile Include="ValidationRules\BlogValidator.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
   </ItemGroup>

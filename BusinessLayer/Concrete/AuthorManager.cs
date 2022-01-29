@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,41 +10,40 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-
-    public class AuthorManager
+    public class AuthorManager : IAuthorService
     {
         Repository<Author> repoauthor = new Repository<Author>();
+        IAuthorDal _authorDal;
 
-        //Tüm Yazar Listesini Getirme
-        public List<Author> GetAll()
+        public AuthorManager(IAuthorDal authorDal)
         {
-            return repoauthor.List();
+            _authorDal = authorDal;
         }
 
-        //Yeni Yazar Ekleme İşlemi
-        public void AddAuthorBL(Author p)
+        public List<Author> GetList()
         {
-            p.Status = true;
-            repoauthor.Insert(p);
+            return _authorDal.List();
         }
-        //Yazarı id değerine göre edit sayfasına taşıma
-        public Author FindAuthor(int id)
+
+        public void AuthorAdd(Author author)
         {
-            return repoauthor.Find(x => x.AuthorID == id);
+            author.Status = true;
+            _authorDal.Insert(author);
         }
-        //Yazar Bilgilerini Güncelleme Sayfası
-        public void EditAuthor(Author p)
+
+        public Author GetByID(int id)
         {
-            Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
-            author.AuthorName = p.AuthorName;
-            author.AuthorImage = p.AuthorImage;
-            author.AuthorAbout = p.AuthorAbout;
-            author.AuthorTitle = p.AuthorTitle;
-            author.AuthorShort = p.AuthorShort;
-            author.Mail = p.Mail;
-            author.Password = p.Password;
-            author.PhoneNumber = p.PhoneNumber;
-            repoauthor.Update(author);
+            return _authorDal.GetByID(id);
+        }
+
+        public void AuthorDelete(Author author)
+        {
+            _authorDal.Update(author);
+        }
+
+        public void AuthorUpdate(Author author)
+        {
+            _authorDal.Update(author);
         }
     }
 }
