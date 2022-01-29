@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager : IAuthorService
+    public class AboutManager : IAboutService
     {
         Repository<About> repoabout = new Repository<About>();
 
@@ -21,34 +21,19 @@ namespace BusinessLayer.Concrete
             _aboutDal = aboutDal;
         }
 
-        public void AuthorAdd(Author author)
+        public void AboutAdd(About about)
         {
-            throw new NotImplementedException();
+            _aboutDal.Insert(about);
         }
 
-        public void AuthorDelete(Author author)
+        public void AboutDelete(About about)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(about);
         }
 
-        public void AuthorUpdate(Author author)
+        public void AboutUpdate(About about)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<About> GetAll()
-        {
-            return repoabout.List();
-        }
-
-        public Author GetByID(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Author> GetList()
-        {
-            throw new NotImplementedException();
+            _aboutDal.Update(about);
         }
 
         public void UpdateAboutBM(About p)
@@ -60,6 +45,16 @@ namespace BusinessLayer.Concrete
             about.AboutImage2 = p.AboutImage2;
             about.AboutID = p.AboutID;
             repoabout.Update(about);
+        }
+
+        public About GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<About> GetList()
+        {
+            return _aboutDal.List();
         }
     }
 }

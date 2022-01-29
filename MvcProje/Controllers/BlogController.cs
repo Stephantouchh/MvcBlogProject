@@ -18,7 +18,7 @@ namespace MvcProje.Controllers
     {
         // GET: Blog
         BlogManager blogManager = new BlogManager(new EfBlogDal());
-        CommentManager commentManager = new CommentManager();
+        CommentManager commentManager = new CommentManager(new EfCommentDal());
         Context _context = new Context();
 
         [AllowAnonymous]
@@ -29,7 +29,7 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult BlogList(int page = 1)
         {
-            var bloglist = blogManager.GetList().Where(x=>x.BlogStatus==true).ToPagedList(page, 6);
+            var bloglist = blogManager.GetList().Where(x => x.BlogStatus == true).ToPagedList(page, 6);
             return PartialView(bloglist);
         }
         [AllowAnonymous]
@@ -230,9 +230,9 @@ namespace MvcProje.Controllers
             ValidationResult results = blogvalidator.Validate(blog);
             if (results.IsValid)
             {
-                blog.BlogStatus = true;
                 blog.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                blogManager.BlogAddBL(blog);
+                blog.BlogStatus = true;
+                blogManager.BlogAdd(blog);
                 return RedirectToAction("AdminBlogList");
             }
             else
@@ -249,7 +249,6 @@ namespace MvcProje.Controllers
         public ActionResult DeleteBlog(int id)
         {
             var result = blogManager.GetByID(id);
-
             if (result.BlogStatus == true)
             {
                 result.BlogStatus = false;
@@ -276,6 +275,7 @@ namespace MvcProje.Controllers
             ValidationResult results = blogvalidator.Validate(blog);
             if (results.IsValid)
             {
+                blog.BlogStatus = true;
                 blogManager.BlogUpdate(blog);
                 return RedirectToAction("AdminBlogList2");
             }

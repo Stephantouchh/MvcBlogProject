@@ -12,24 +12,11 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        Repository<Category> repocategory = new Repository<Category>();
-
         ICategoryDal _categoryDal;
 
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
-        }
-
-        public List<Category> GetAll()
-        {
-            return repocategory.List();
-        }
-
-        public void DeleteCategoryBL(int id)
-        {
-            Category category = repocategory.Find(x => x.CategoryID == id);
-            repocategory.Update(category);
         }
 
         public List<Category> GetList()

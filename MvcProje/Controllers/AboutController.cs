@@ -17,13 +17,13 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            var aboutcontent = aboutManager.GetAll();
+            var aboutcontent = aboutManager.GetList();
             return View(aboutcontent);
         }
         [AllowAnonymous]
         public PartialViewResult Footer()
         {
-            var aboutcontentlist = aboutManager.GetAll();
+            var aboutcontentlist = aboutManager.GetList();
             return PartialView(aboutcontentlist);
         }
         [AllowAnonymous]
@@ -35,7 +35,7 @@ namespace MvcProje.Controllers
         [HttpGet]
         public ActionResult UpdateAboutList()
         {
-            var aboutlist = aboutManager.GetAll();
+            var aboutlist = aboutManager.GetList();
             return View(aboutlist);
         }
         [HttpPost]

@@ -26,7 +26,7 @@ namespace MvcProje.Controllers
         public PartialViewResult AuthorPopularPost(int id)
         {
             var blogauthorid = blogManager.GetList().Where(x => x.BlogID == id).Select(y => y.AuthorID).FirstOrDefault();
-            var authorblogs = blogManager.GetBlogByAuthor(blogauthorid);
+            var authorblogs = blogManager.GetBlogByAuthor(blogauthorid).Take(5);
             return PartialView(authorblogs);
         }
         public ActionResult AuthorList()
