@@ -61,6 +61,7 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Migrations\202201211514226_mig1.cs" />
     <Compile Include="Migrations\202201211514226_mig1.designer.cs">
       <DependentUpon>202201211514226_mig1.cs</DependentUpon>

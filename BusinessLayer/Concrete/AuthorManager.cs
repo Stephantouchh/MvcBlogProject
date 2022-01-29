@@ -20,15 +20,10 @@ namespace BusinessLayer.Concrete
         }
 
         //Yeni Yazar Ekleme İşlemi
-        public int AddAuthorBL(Author p)
+        public void AddAuthorBL(Author p)
         {
-            //Parametreden Gönderilen değerlerin geçerliliğinin kontrolü
-            if (p.AuthorName == "" | p.AuthorShort == "" | p.AuthorTitle == "")
-            {
-                return -1;
-            }
             p.Status = true;
-            return repoauthor.Insert(p);
+            repoauthor.Insert(p);
         }
         //Yazarı id değerine göre edit sayfasına taşıma
         public Author FindAuthor(int id)
@@ -36,7 +31,7 @@ namespace BusinessLayer.Concrete
             return repoauthor.Find(x => x.AuthorID == id);
         }
         //Yazar Bilgilerini Güncelleme Sayfası
-        public int EditAuthor(Author p)
+        public void EditAuthor(Author p)
         {
             Author author = repoauthor.Find(x => x.AuthorID == p.AuthorID);
             author.AuthorName = p.AuthorName;
@@ -47,7 +42,7 @@ namespace BusinessLayer.Concrete
             author.Mail = p.Mail;
             author.Password = p.Password;
             author.PhoneNumber = p.PhoneNumber;
-            return repoauthor.Update(author);
+            repoauthor.Update(author);
         }
     }
 }

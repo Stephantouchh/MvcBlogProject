@@ -1,5 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +14,17 @@ namespace MvcProje.Controllers
     public class CategoryController : Controller
     {
         // GET: Category
-        CategoryManager categoryManager = new CategoryManager();
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-        public ActionResult Index()
-        {
-            var categoryvalues = categoryManager.GetAll();
-            return View(categoryvalues);
-        }
         [AllowAnonymous]
         public PartialViewResult BlogDetailsCategoryList()
         {
-            var categoryvalues = categoryManager.GetAll().Where(x => x.CategoryStatus == true);
+            var categoryvalues = categoryManager.GetList().Where(x => x.CategoryStatus == true);
             return PartialView(categoryvalues);
         }
         public ActionResult AdminCategoryList()
         {
-            var categorylist = categoryManager.GetAll();
+            var categorylist = categoryManager.GetList();
             return View(categorylist);
         }
         [HttpGet]
@@ -37,20 +35,46 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult AdminCategoryAdd(Category category)
         {
-            categoryManager.CategoryAddBL(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryvalidator = new CategoryValidator();
+            ValidationResult results = categoryvalidator.Validate(category);
+            if (results.IsValid)
+            {
+                categoryManager.CategoryAdd(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         [HttpGet]
         public ActionResult CategoryEdit(int id)
         {
-            Category category = categoryManager.FindCategory(id);
+            Category category = categoryManager.GetByID(id);
             return View(category);
         }
         [HttpPost]
         public ActionResult CategoryEdit(Category category)
         {
-            categoryManager.EditCategory(category);
-            return RedirectToAction("AdminCategoryList");
+            CategoryValidator categoryvalidator = new CategoryValidator();
+            ValidationResult results = categoryvalidator.Validate(category);
+            if (results.IsValid)
+            {
+                categoryManager.CategoryUpdate(category);
+                return RedirectToAction("AdminCategoryList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public ActionResult CategoryDelete(int id)
         {
@@ -64,7 +88,7 @@ namespace MvcProje.Controllers
             {
                 result.CategoryStatus = true;
             }
-            categoryManager.DeleteCategoryBL(id);
+            categoryManager.CategoryDelete(result);
             return RedirectToAction("AdminCategoryList");
         }
     }
