@@ -20,7 +20,7 @@ namespace BusinessLayer.ValidationRules
                   .MaximumLength(100).WithMessage("Lütfen en fazla 100 karakter Giriniz!");
             RuleFor(x => x.BlogImageCover).NotEmpty().WithMessage("Bloğun Kapak Resmini Boş Bırakamazsınız!")
                .MinimumLength(10).WithMessage("Lütfen en az 10 karakter Giriniz!")
-               .MaximumLength(100).WithMessage("Lütfen en fazla 100 karakter Giriniz!");
+               .MaximumLength(200).WithMessage("Lütfen en fazla 200 karakter Giriniz!");
             RuleFor(x => x.BlogContent).NotEmpty().WithMessage("Bloğun Açıklamasını Boş Bırakamazsınız!")
                   .MinimumLength(200).WithMessage("Lütfen en az 200 karakter Giriniz ve Kesinlikle Bir Boşluk Ekleyiniz!");
         }

@@ -39,6 +39,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryvalidator.Validate(category);
             if (results.IsValid)
             {
+                category.CategoryStatus = true;
                 categoryManager.TAdd(category);
                 return RedirectToAction("AdminCategoryList");
             }
@@ -64,6 +65,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryvalidator.Validate(category);
             if (results.IsValid)
             {
+                category.CategoryStatus = true;
                 categoryManager.TUpdate(category);
                 return RedirectToAction("AdminCategoryList");
             }

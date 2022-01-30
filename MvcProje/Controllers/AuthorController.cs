@@ -46,6 +46,7 @@ namespace MvcProje.Controllers
             ValidationResult results = authorvalidator.Validate(author);
             if (results.IsValid)
             {
+                author.Status = true;
                 authorManager.TAdd(author);
                 return RedirectToAction("AuthorList");
             }
@@ -71,6 +72,7 @@ namespace MvcProje.Controllers
             ValidationResult results = authorvalidator.Validate(author);
             if (results.IsValid)
             {
+                author.Status = true;
                 authorManager.TUpdate(author);
                 return RedirectToAction("AuthorList");
             }

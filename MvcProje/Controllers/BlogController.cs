@@ -43,38 +43,38 @@ namespace MvcProje.Controllers
         {
             //3.Kategori
             //1.Post
-            var posttitle1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogDate).FirstOrDefault();
-            var blogpostid1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogID).FirstOrDefault();
+            var posttitle1 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage1 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate1 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid1 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 3).Select(y => y.BlogID).FirstOrDefault();
 
             //6.Kategori
             //2.Post
-            var posttitle2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogDate).FirstOrDefault();
-            var blogpostid2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogID).FirstOrDefault();
+            var posttitle2 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage2 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate2 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid2 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 6).Select(y => y.BlogID).FirstOrDefault();
 
             //2.Kategori
             //3.Post
-            var posttitle3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogDate).FirstOrDefault();
-            var blogpostid3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogID).FirstOrDefault();
+            var posttitle3 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage3 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate3 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid3 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 2).Select(y => y.BlogID).FirstOrDefault();
 
             //4.Kategori
             //4.Post
-            var posttitle4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogDate).FirstOrDefault();
-            var blogpostid4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogID).FirstOrDefault();
+            var posttitle4 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage4 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate4 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid4 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 4).Select(y => y.BlogID).FirstOrDefault();
 
             //5.Kategori
             //5.Post
-            var posttitle5 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage5 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate5 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogDate).FirstOrDefault();
-            var blogpostid5 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogID).FirstOrDefault();
+            var posttitle5 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogTitle).FirstOrDefault();
+            var postimage5 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogImage).FirstOrDefault();
+            var blogdate5 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogDate).FirstOrDefault();
+            var blogpostid5 = blogManager.GetList().Where(x => x.BlogStatus == true).OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 5).Select(y => y.BlogID).FirstOrDefault();
 
 
             //1.Post
@@ -110,60 +110,6 @@ namespace MvcProje.Controllers
             return PartialView();
         }
 
-
-        //[AllowAnonymous]
-        //public PartialViewResult OtherFeaturedPost()
-        //{
-        //    //1.Kategori
-        //    //1.Post
-        //    var posttitle1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
-        //    var postimage1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
-        //    var blogdate1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
-
-        //    //8.Kategori
-        //    //2.Post
-        //    var posttitle2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogTitle).FirstOrDefault();
-        //    var postimage2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogImage).FirstOrDefault();
-        //    var blogdate2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogDate).FirstOrDefault();
-
-        //    //9.Kategori
-        //    //3.Post
-        //    var posttitle3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogTitle).FirstOrDefault();
-        //    var postimage3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogImage).FirstOrDefault();
-        //    var blogdate3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogDate).FirstOrDefault();
-
-        //    //7.Kategori
-        //    //4.Post
-        //    var posttitle4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogTitle).FirstOrDefault();
-        //    var postimage4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogImage).FirstOrDefault();
-        //    var blogdate4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogDate).FirstOrDefault();
-
-        //    //1.Kategori
-        //    //1.Post
-        //    ViewBag.posttitle1 = posttitle1;
-        //    ViewBag.postimage1 = postimage1;
-        //    ViewBag.blogdate1 = blogdate1;
-
-        //    //8.Kategori
-        //    //2.Post
-        //    ViewBag.posttitle2 = posttitle2;
-        //    ViewBag.postimage2 = postimage2;
-        //    ViewBag.blogdate2 = blogdate2;
-
-        //    //9.Kategori
-        //    //3.Post
-        //    ViewBag.posttitle3 = posttitle3;
-        //    ViewBag.postimage3 = postimage3;
-        //    ViewBag.blogdate3 = blogdate3;
-
-        //    //7.Kategori
-        //    //4.Post
-        //    ViewBag.posttitle4 = posttitle4;
-        //    ViewBag.postimage4 = postimage4;
-        //    ViewBag.blogdate4 = blogdate4;
-
-        //    return PartialView();
-        //}
         [AllowAnonymous]
         public ActionResult BlogDetails()
         {
@@ -238,6 +184,7 @@ namespace MvcProje.Controllers
             ValidationResult results = blogvalidator.Validate(blog);
             if (results.IsValid)
             {
+                blog.BlogRating = 5;
                 blog.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 blog.BlogStatus = true;
                 blogManager.TAdd(blog);
@@ -283,6 +230,7 @@ namespace MvcProje.Controllers
             ValidationResult results = blogvalidator.Validate(blog);
             if (results.IsValid)
             {
+                blog.BlogRating = 5;
                 blog.BlogStatus = true;
                 blogManager.TUpdate(blog);
                 return RedirectToAction("AdminBlogList2");
