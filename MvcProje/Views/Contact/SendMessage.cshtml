@@ -1,4 +1,4 @@
-﻿
+﻿@model EntityLayer.Concrete.Contact
 @{
     ViewBag.Title = "SendMessage";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -29,11 +29,13 @@
                     <div class="row form-group">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <label class="text-black" for="fname">Adınız</label>
-                            <input type="text" name="Name" id="fname" class="form-control">
+                            @Html.TextBoxFor(x => x.Name, new { placeholder = "Örneğin: Ali", @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-6">
                             <label class="text-black" for="lname">Soyadınız</label>
-                            <input type="text" name="SurName" id="lname" class="form-control">
+                            @Html.TextBoxFor(x => x.SurName, new { placeholder = "Örneğin: Yıldız", @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.SurName, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
@@ -41,7 +43,8 @@
 
                         <div class="col-md-12">
                             <label class="text-black" for="email">Mail Adresiniz</label>
-                            <input type="email" id="email" name="Mail" class="form-control">
+                            @Html.TextBoxFor(x => x.Mail, new { placeholder = "Örneğin: deneme@gmail.com", @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
@@ -49,14 +52,16 @@
 
                         <div class="col-md-12">
                             <label class="text-black" for="subject">Konu</label>
-                            <input type="text" id="subject" name="Subject" class="form-control">
+                            @Html.TextBoxFor(x => x.Subject, new { placeholder = "Örneğin: Teşekkür Mesajı", @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="message">Mesajınız</label>
-                            <textarea name="Message" id="message" cols="30" rows="7" class="form-control" placeholder="Yazmak istediğiniz mesajı buraya yazabilirsiniz!"></textarea>
+                            @Html.TextAreaFor(x => x.Message,10,3, new { placeholder = "Yazmak İstediğiniz Mesajı Giriniz!", @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })
                         </div>
                     </div>
 

@@ -9,5 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IBlogService : IGenericService<Blog>
     {
+        List<Blog> GetBlogByID(int id);
+        List<Blog> GetBlogByAuthor(int id);
+        List<Blog> GetBlogByCategory(int id);
     }
 }

@@ -39,7 +39,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryvalidator.Validate(category);
             if (results.IsValid)
             {
-                categoryManager.CategoryAdd(category);
+                categoryManager.TAdd(category);
                 return RedirectToAction("AdminCategoryList");
             }
             else
@@ -64,7 +64,7 @@ namespace MvcProje.Controllers
             ValidationResult results = categoryvalidator.Validate(category);
             if (results.IsValid)
             {
-                categoryManager.CategoryUpdate(category);
+                categoryManager.TUpdate(category);
                 return RedirectToAction("AdminCategoryList");
             }
             else
@@ -88,7 +88,7 @@ namespace MvcProje.Controllers
             {
                 result.CategoryStatus = true;
             }
-            categoryManager.CategoryDelete(result);
+            categoryManager.TDelete(result);
             return RedirectToAction("AdminCategoryList");
         }
     }

@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,7 @@ namespace MvcProje.Controllers
         [AllowAnonymous]
         public PartialViewResult CommentList(int id)
         {
-            var commentlist = commentManager.CommentByBlog(id).Where(x=>x.CommentStatus==true);
+            var commentlist = commentManager.CommentByBlog(id).Where(x => x.CommentStatus == true);
             return PartialView(commentlist);
         }
         [AllowAnonymous]
@@ -30,9 +32,22 @@ namespace MvcProje.Controllers
         [HttpPost]
         public PartialViewResult LeaveComment(Comment comment)
         {
-            comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            comment.CommentStatus = true;
-            commentManager.CommentAdd(comment);
+            CommentValidator commentvalidator = new CommentValidator();
+            ValidationResult results = commentvalidator.Validate(comment);
+            if (results.IsValid)
+            {
+                comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                comment.CommentStatus = true;
+                commentManager.TAdd(comment);
+                return PartialView();
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return PartialView();
         }
         public ActionResult AdminCommentListTrue()

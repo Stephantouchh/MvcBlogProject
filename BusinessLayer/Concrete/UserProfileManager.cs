@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class UserProfileManager
+    public class UserProfileManager : IAuthorService
     {
         Repository<Author> repouser = new Repository<Author>();
         Repository<Blog> repouserblog = new Repository<Blog>();
@@ -34,6 +35,31 @@ namespace BusinessLayer.Concrete
             author.Password = p.Password;
             author.PhoneNumber = p.PhoneNumber;
             repouser.Update(author);
+        }
+
+        public List<Author> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(Author t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Author GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TDelete(Author t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Author t)
+        {
+            throw new NotImplementedException();
         }
     }
 }

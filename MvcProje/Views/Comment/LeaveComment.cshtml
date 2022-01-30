@@ -1,23 +1,24 @@
-﻿<div class="comment-form-wrap pt-5">
+﻿@model EntityLayer.Concrete.Comment
+
+<div class="comment-form-wrap pt-5">
     <h3 class="mb-5">Bir Yorum Bırakın!</h3>
     <form method="post" class="p-5 bg-light">
         <div class="form-group">
             <label for="name">Adınız ve Soyadınız *</label>
-            <input type="text" class="form-control" name="UserName">
+            @Html.TextBoxFor(x => x.UserName, new { placeholder = "Örneğin: Ali Yıldız", @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.UserName, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">
             <label for="email">Mail Adresiniz *</label>
-            <input type="email" class="form-control" name="Mail">
+            @Html.TextBoxFor(x => x.Mail, new { placeholder = "Örneğin: deneme@gmail.com", @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })
         </div>
-        @*<div class="form-group">
-                <label for="website">Website</label>
-                <input type="url" class="form-control" id="website">
-            </div>*@
         @*<input type="hidden" value="@DateTime.Now.ToShortDateString()" name="CommentDate" />*@
         <input type="hidden" value="@ViewBag.id" name="BlogID" />
         <div class="form-group">
             <label for="message">Mesajınız</label>
-            <textarea name="CommentText" cols="30" rows="10" class="form-control"></textarea>
+            @Html.TextAreaFor(x => x.CommentText,10,3, new { placeholder = "Örneğin: Mesajınızı Giriniz!", @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CommentText, "", new { @class = "text-danger" })
         </div>
         <div class="form-group">
             <label for="select">Puanınız *</label>

@@ -38,25 +38,10 @@ namespace BusinessLayer.Concrete
             return _blogDal.List();
         }
 
-        //public void BlogAdd(Blog blog)
-        //{
-        //    _blogDal.Insert(blog);
-        //}
-
         public Blog GetByID(int id)
         {
             return _blogDal.GetByID(id);
         }
-
-        //public void BlogDelete(Blog blog)
-        //{
-        //    _blogDal.Update(blog);
-        //}
-
-        //public void BlogUpdate(Blog blog)
-        //{
-        //    _blogDal.Update(blog);
-        //}
 
         public void TAdd(Blog t)
         {

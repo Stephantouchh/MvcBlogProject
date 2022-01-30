@@ -24,25 +24,25 @@ namespace BusinessLayer.Concrete
             return _authorDal.List();
         }
 
-        public void AuthorAdd(Author author)
-        {
-            author.Status = true;
-            _authorDal.Insert(author);
-        }
-
         public Author GetByID(int id)
         {
             return _authorDal.GetByID(id);
         }
 
-        public void AuthorDelete(Author author)
+        public void TAdd(Author t)
         {
-            _authorDal.Update(author);
+            t.Status = true;
+            _authorDal.Insert(t);
         }
 
-        public void AuthorUpdate(Author author)
+        public void TDelete(Author t)
         {
-            _authorDal.Update(author);
+            _authorDal.Update(t);
+        }
+
+        public void TUpdate(Author t)
+        {
+            _authorDal.Update(t);
         }
     }
 }

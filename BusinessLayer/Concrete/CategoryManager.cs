@@ -24,24 +24,24 @@ namespace BusinessLayer.Concrete
             return _categoryDal.List();
         }
 
-        public void CategoryAdd(Category category)
-        {
-            _categoryDal.Insert(category);
-        }
-
         public Category GetByID(int id)
         {
             return _categoryDal.GetByID(id);
         }
 
-        public void CategoryDelete(Category category)
+        public void TAdd(Category t)
         {
-            _categoryDal.Update(category);
+            _categoryDal.Insert(t);
         }
 
-        public void CategoryUpdate(Category category)
+        public void TDelete(Category t)
         {
-            _categoryDal.Update(category);
+            _categoryDal.Update(t);
+        }
+
+        public void TUpdate(Category t)
+        {
+            _categoryDal.Update(t);
         }
     }
 }

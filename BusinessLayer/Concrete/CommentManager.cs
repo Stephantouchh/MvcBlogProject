@@ -48,12 +48,6 @@ namespace BusinessLayer.Concrete
             comment.CommentStatus = true;
             _commentDal.Update(comment);
         }
-
-        public void CommentAdd(Comment comment)
-        {
-            _commentDal.Insert(comment);
-        }
-
         public List<Comment> GetList()
         {
             throw new NotImplementedException();
@@ -64,14 +58,19 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public void CommentDelete(Comment comment)
+        public void TAdd(Comment t)
         {
-            _commentDal.Update(comment);
+            _commentDal.Insert(t);
         }
 
-        public void CommentUpdate(Comment comment)
+        public void TDelete(Comment t)
         {
-            _commentDal.Update(comment);
+            _commentDal.Update(t);
+        }
+
+        public void TUpdate(Comment t)
+        {
+            _commentDal.Update(t);
         }
     }
 }
