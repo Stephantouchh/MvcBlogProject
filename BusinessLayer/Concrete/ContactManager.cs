@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,21 +10,43 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class ContactManager
+    public class ContactManager : IContactService
     {
-        Repository<Contact> repocontact = new Repository<Contact>();
+        IContactDal _contactDal;
+
+        public ContactManager(IContactDal contactDal)
+        {
+            _contactDal = contactDal;
+        }
 
         public void BLContactAdd(Contact contact)
         {
-            repocontact.Insert(contact);
+            _contactDal.Insert(contact);
         }
-        public List<Contact> GetAll()
+
+        public Contact GetByID(int id)
         {
-            return repocontact.List();
+            return _contactDal.Find(x => x.ContactID == id);
         }
-        public Contact GetContactDetails(int id)
+
+        public List<Contact> GetList()
         {
-            return repocontact.Find(x => x.ContactID == id);
+            return _contactDal.List();
+        }
+
+        public void TAdd(Contact t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TDelete(Contact t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Contact t)
+        {
+            throw new NotImplementedException();
         }
     }
 }

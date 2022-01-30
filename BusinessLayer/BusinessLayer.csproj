@@ -50,6 +50,7 @@
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Abstract\IGenericService.cs" />
     <Compile Include="Abstract\ISubscribeMailService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\AuthorManager.cs" />

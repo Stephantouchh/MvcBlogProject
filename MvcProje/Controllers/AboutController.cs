@@ -41,7 +41,7 @@ namespace MvcProje.Controllers
         [HttpPost]
         public ActionResult UpdateAbout(About p)
         {
-            aboutManager.UpdateAboutBM(p);
+            aboutManager.AboutUpdate(p);
             return RedirectToAction("UpdateAboutList");
         }
     }

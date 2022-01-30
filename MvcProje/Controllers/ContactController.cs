@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace MvcProje.Controllers
 {
     public class ContactController : Controller
     {
-        ContactManager contactManager = new ContactManager();
+        ContactManager contactManager = new ContactManager(new EfContactDal());
         // GET: Contact
 
         [AllowAnonymous]
@@ -33,12 +34,12 @@ namespace MvcProje.Controllers
         }
         public ActionResult SendBox()
         {
-            var messagelist = contactManager.GetAll();
+            var messagelist = contactManager.GetList();
             return View(messagelist);
         }
         public ActionResult MessageDetails(int id)
         {
-            Contact contact = contactManager.GetContactDetails(id);
+            Contact contact = contactManager.GetByID(id);
             return View(contact);
         }
         public PartialViewResult GetMessageSideBar()

@@ -26,12 +26,18 @@ namespace MvcProje.Controllers
         {
             return View();
         }
+
+
+        //Tamamlandı
         [AllowAnonymous]
         public PartialViewResult BlogList(int page = 1)
         {
             var bloglist = blogManager.GetList().Where(x => x.BlogStatus == true).ToPagedList(page, 6);
             return PartialView(bloglist);
         }
+
+
+        //Tamamlandı
         [AllowAnonymous]
         public PartialViewResult FeaturedPost()
         {
@@ -103,59 +109,61 @@ namespace MvcProje.Controllers
 
             return PartialView();
         }
-        [AllowAnonymous]
-        public PartialViewResult OtherFeaturedPost()
-        {
-            //1.Kategori
-            //1.Post
-            var posttitle1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
 
-            //8.Kategori
-            //2.Post
-            var posttitle2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogDate).FirstOrDefault();
 
-            //9.Kategori
-            //3.Post
-            var posttitle3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogDate).FirstOrDefault();
+        //[AllowAnonymous]
+        //public PartialViewResult OtherFeaturedPost()
+        //{
+        //    //1.Kategori
+        //    //1.Post
+        //    var posttitle1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogTitle).FirstOrDefault();
+        //    var postimage1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogImage).FirstOrDefault();
+        //    var blogdate1 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 1).Select(y => y.BlogDate).FirstOrDefault();
 
-            //7.Kategori
-            //4.Post
-            var posttitle4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogTitle).FirstOrDefault();
-            var postimage4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogImage).FirstOrDefault();
-            var blogdate4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogDate).FirstOrDefault();
+        //    //8.Kategori
+        //    //2.Post
+        //    var posttitle2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogTitle).FirstOrDefault();
+        //    var postimage2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogImage).FirstOrDefault();
+        //    var blogdate2 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 8).Select(y => y.BlogDate).FirstOrDefault();
 
-            //1.Kategori
-            //1.Post
-            ViewBag.posttitle1 = posttitle1;
-            ViewBag.postimage1 = postimage1;
-            ViewBag.blogdate1 = blogdate1;
+        //    //9.Kategori
+        //    //3.Post
+        //    var posttitle3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogTitle).FirstOrDefault();
+        //    var postimage3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogImage).FirstOrDefault();
+        //    var blogdate3 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 9).Select(y => y.BlogDate).FirstOrDefault();
 
-            //8.Kategori
-            //2.Post
-            ViewBag.posttitle2 = posttitle2;
-            ViewBag.postimage2 = postimage2;
-            ViewBag.blogdate2 = blogdate2;
+        //    //7.Kategori
+        //    //4.Post
+        //    var posttitle4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogTitle).FirstOrDefault();
+        //    var postimage4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogImage).FirstOrDefault();
+        //    var blogdate4 = blogManager.GetList().OrderByDescending(z => z.BlogID).Where(x => x.CategoryID == 7).Select(y => y.BlogDate).FirstOrDefault();
 
-            //9.Kategori
-            //3.Post
-            ViewBag.posttitle3 = posttitle3;
-            ViewBag.postimage3 = postimage3;
-            ViewBag.blogdate3 = blogdate3;
+        //    //1.Kategori
+        //    //1.Post
+        //    ViewBag.posttitle1 = posttitle1;
+        //    ViewBag.postimage1 = postimage1;
+        //    ViewBag.blogdate1 = blogdate1;
 
-            //7.Kategori
-            //4.Post
-            ViewBag.posttitle4 = posttitle4;
-            ViewBag.postimage4 = postimage4;
-            ViewBag.blogdate4 = blogdate4;
+        //    //8.Kategori
+        //    //2.Post
+        //    ViewBag.posttitle2 = posttitle2;
+        //    ViewBag.postimage2 = postimage2;
+        //    ViewBag.blogdate2 = blogdate2;
 
-            return PartialView();
-        }
+        //    //9.Kategori
+        //    //3.Post
+        //    ViewBag.posttitle3 = posttitle3;
+        //    ViewBag.postimage3 = postimage3;
+        //    ViewBag.blogdate3 = blogdate3;
+
+        //    //7.Kategori
+        //    //4.Post
+        //    ViewBag.posttitle4 = posttitle4;
+        //    ViewBag.postimage4 = postimage4;
+        //    ViewBag.blogdate4 = blogdate4;
+
+        //    return PartialView();
+        //}
         [AllowAnonymous]
         public ActionResult BlogDetails()
         {
@@ -232,7 +240,7 @@ namespace MvcProje.Controllers
             {
                 blog.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 blog.BlogStatus = true;
-                blogManager.BlogAdd(blog);
+                blogManager.TAdd(blog);
                 return RedirectToAction("AdminBlogList");
             }
             else
@@ -257,7 +265,7 @@ namespace MvcProje.Controllers
             {
                 result.BlogStatus = true;
             }
-            blogManager.BlogDelete(result);
+            blogManager.TDelete(result);
             return RedirectToAction("AdminBlogList2", "Blog");
         }
         [HttpGet]
@@ -276,7 +284,7 @@ namespace MvcProje.Controllers
             if (results.IsValid)
             {
                 blog.BlogStatus = true;
-                blogManager.BlogUpdate(blog);
+                blogManager.TUpdate(blog);
                 return RedirectToAction("AdminBlogList2");
             }
             else

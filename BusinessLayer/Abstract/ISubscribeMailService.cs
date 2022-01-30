@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ISubscribeMailService
+    public interface ISubscribeMailService : IGenericService<SubscribeMail>
     {
-        List<SubscribeMail> GetList();
-        void SubscribeMailAdd(SubscribeMail subscribeMail);
-        SubscribeMail GetByID(int id);
-        void SubscribeMailDelete(SubscribeMail subscribeMail);
-        void SubscribeMailUpdate(SubscribeMail subscribeMail);
     }
 }
